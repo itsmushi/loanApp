@@ -7,6 +7,7 @@ import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
 import 'package:loanapp/screens/applyLoan/loanType/loanTypeScreen.dart';
 import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
+import 'package:loanapp/screens/comfirmLoan/confrimLoarn.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
 
 import 'package:loanapp/screens/splashScreen.dart';
@@ -37,8 +38,8 @@ class _MyAppState extends State<MyApp> {
           child:
               //  LoginScreen(),
               // SignUpScreen()
-              HomeApplyLoan(),
-
+              // HomeApplyLoan(),
+         ConfrimLoan()
           // child: ListDadaScreen(),
         ),
         routes: {
