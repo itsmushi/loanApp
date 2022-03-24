@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
 import 'package:loanapp/shared/sharedComponents/button.dart';
+import 'package:loanapp/shared/sharedComponents/customEmailTextInput.dart';
+import 'package:loanapp/shared/sharedComponents/customNumberInput.dart';
 import 'package:loanapp/shared/sharedComponents/footer.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 import 'package:loanapp/shared/sharedComponents/customTextInput.dart';
@@ -95,7 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           Padding(
                               padding: _edgeInsets,
-                              child: CustomTextInput(emailController)),
+                              child: CustomEmailTextInput(emailController)),
                           Row(
                             children: [
                               CustomText(text: "Phone Numer"),
@@ -103,7 +105,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           ),
                           Padding(
                               padding: _edgeInsets,
-                              child: CustomTextInput(emailController)),
+                              child: CustomNumberInput(pnController)),
                           Row(
                             children: [
                               CustomText(text: "Password"),

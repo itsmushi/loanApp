@@ -25,7 +25,7 @@ class TabNavigator extends StatelessWidget {
       case "LoanType":
         {
           child = LoanTypeScreen();
-          // child = StepsScreen();
+          child = StepsScreen();
           break;
         }
 

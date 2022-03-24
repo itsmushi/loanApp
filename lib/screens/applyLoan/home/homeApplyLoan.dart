@@ -38,20 +38,23 @@ class _HomeApplyLoanState extends State<HomeApplyLoan> {
                 ],
               ),
             ),
-            body: TabBarView(
-              children: [
-                Offstage(
-                  offstage: false,
-                  child: TabNavigator(
-                      navigatorKey: _navigatorKeys.values.first,
-                      tabItem: "LoanType"),
-                ),
-                Offstage(
-                  child: TabNavigator(
-                      navigatorKey: _navigatorKeys.values.last,
-                      tabItem: "LoanCalculator"),
-                ),
-              ],
+            body: Container(
+              height: MediaQuery.of(context).size.height * 0.8,
+              child: TabBarView(
+                children: [
+                  Offstage(
+                    offstage: false,
+                    child: TabNavigator(
+                        navigatorKey: _navigatorKeys.values.first,
+                        tabItem: "LoanType"),
+                  ),
+                  Offstage(
+                    child: TabNavigator(
+                        navigatorKey: _navigatorKeys.values.last,
+                        tabItem: "LoanCalculator"),
+                  ),
+                ],
+              ),
             ),
             bottomSheet: Footer(),
           ),

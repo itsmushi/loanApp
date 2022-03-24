@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:loanapp/core/constants.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
+import 'package:loanapp/shared/sharedComponents/customTextInput.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 
 class Step1 extends StatelessWidget {
+  TextEditingController amountController = TextEditingController();
   String dropdownvalue = 'Item 1';
   selectItemHandler(String val) {
     print("selected item is $val");
@@ -19,18 +22,19 @@ class Step1 extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       //
       CustomText(text: "Select Loan Type"),
-      SizedBox(height: 8),
+      Constants.spaceBetween,
       CustomDropDown(items, selectItemHandler),
-      SizedBox(height: 14),
+      Constants.spaceNextInput,
       //
       CustomText(text: "Enter Amount"),
-      SizedBox(height: 8),
-      CustomDropDown(items, selectItemHandler),
-      CustomText(text: "Repayment period in Month"),
+      Constants.spaceBetween,
+      CustomTextInput(amountController),
+      Constants.spaceNextInput,
       //
-      SizedBox(height: 8),
+      CustomText(text: "Repayment period in Month"),
+      Constants.spaceBetween,
       CustomDropDown(items, selectItemHandler),
-      SizedBox(height: 14),
+      Constants.spaceNextInput,
     ]);
   }
 }

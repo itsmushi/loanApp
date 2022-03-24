@@ -7,4 +7,6 @@ class Constants {
   static Color textColor = Colors.black54;
   static EdgeInsets leftRightMargin = EdgeInsets.symmetric(horizontal: 24);
   static TextStyle customStyle = TextStyle(fontSize: 16, color: Colors.black54);
+  static SizedBox spaceBetween = SizedBox(height: 4);
+  static SizedBox spaceNextInput = SizedBox(height: 18);
 }
