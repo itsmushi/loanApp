@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
 import 'package:loanapp/screens/applyLoan/loanType/loanTypeScreen.dart';
+import 'package:loanapp/screens/applyLoan/steps/stepsScreen.dart';
 
 class TabNavigator extends StatelessWidget {
 //  TabNavigator(
@@ -23,7 +24,8 @@ class TabNavigator extends StatelessWidget {
     switch (tabItem) {
       case "LoanType":
         {
-          child = LoanTypeScreen();
+          // child = LoanTypeScreen();
+          child = StepsScreen();
           break;
         }
 

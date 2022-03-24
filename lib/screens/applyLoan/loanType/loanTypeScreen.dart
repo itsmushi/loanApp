@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
+import 'package:loanapp/screens/applyLoan/microfinance/microfinanceScreen.dart';
 import 'package:loanapp/shared/sharedComponents/button.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
@@ -67,7 +68,12 @@ class _LoanTypeScreenState extends State<LoanTypeScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Button(text: "Check for loan limit", clickHandler: (context) {}),
+            Button(
+                text: "Check for loan limit",
+                clickHandler: (context) {
+                  print("next screen");
+                  Navigator.of(context).pushNamed(MicrofinanceScreen.routeName);
+                }),
           ],
         ),
       ]),
