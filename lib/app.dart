@@ -31,10 +31,12 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.blue,
         ),
         home: SafeArea(
-          child: LoginScreen(),
+            child:
+                //  LoginScreen(),
+                SignUpScreen()
 
-          // child: ListDadaScreen(),
-        ),
+            // child: ListDadaScreen(),
+            ),
         routes: {
           LoginScreen.routeName: (_) => LoginScreen(),
           SignUpScreen.routeName: (_) => SignUpScreen(),

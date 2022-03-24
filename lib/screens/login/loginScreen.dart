@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
 import 'package:loanapp/shared/sharedComponents/button.dart';
+import 'package:loanapp/shared/sharedComponents/customTextInput.dart';
 import 'package:loanapp/shared/sharedComponents/footer.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 
@@ -53,135 +54,123 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       // appBar: AppBar(),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24),
-            height: MediaQuery.of(context).size.height * 0.90,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.2),
-                  const Text(
-                    "logo",
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 18,
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height / 1.8,
-                    width: MediaQuery.of(context).size.width,
-                    child: SingleChildScrollView(
-                      child: Form(
-                        key: _formkey,
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                CustomText(text: "Username"),
-                              ],
-                            ),
-                            Padding(
-                              padding: _edgeInsets,
-                              child: TextFormField(
-                                controller: emailController,
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      vertical: 4.0, horizontal: 8),
-                                  border: formBorder,
-                                ),
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "*Required";
-                                  } else {
-                                    return null;
-                                  }
-                                },
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 24),
+              height: MediaQuery.of(context).size.height * 0.90,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+                    const Text(
+                      "logo",
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 18,
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height / 1.8,
+                      width: MediaQuery.of(context).size.width,
+                      child: SingleChildScrollView(
+                        child: Form(
+                          key: _formkey,
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  CustomText(text: "Username"),
+                                ],
                               ),
-                            ),
-                            Row(
-                              children: [
-                                CustomText(text: "Password"),
-                              ],
-                            ),
-                            Padding(
-                              padding: _edgeInsets,
-                              child: TextFormField(
-                                controller: passwordController,
-                                obscureText: _isHidden,
-                                decoration: InputDecoration(
-                                  contentPadding: const EdgeInsets.symmetric(
-                                      vertical: 4.0, horizontal: 8),
-                                  border: formBorder,
-                                  suffix: InkWell(
-                                    onTap: _togglePasswordView,
-                                    child: Icon(
-                                      _isHidden
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
+                              Padding(
+                                  padding: _edgeInsets,
+                                  child: CustomTextInput(emailController)),
+                              Row(
+                                children: [
+                                  CustomText(text: "Password"),
+                                ],
+                              ),
+                              Padding(
+                                padding: _edgeInsets,
+                                child: TextFormField(
+                                  controller: passwordController,
+                                  obscureText: _isHidden,
+                                  decoration: InputDecoration(
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        vertical: 4.0, horizontal: 8),
+                                    border: formBorder,
+                                    suffix: InkWell(
+                                      onTap: _togglePasswordView,
+                                      child: Icon(
+                                        _isHidden
+                                            ? Icons.visibility
+                                            : Icons.visibility_off,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return "*Required";
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                              ),
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.only(top: 20, bottom: 24),
-                                  child: Button(
-                                      text: "Sign In",
-                                      clickHandler: onSubmittingForm),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomText(text: "Don't have an account?"),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    print("send to register activity");
-                                    Navigator.of(context)
-                                        .pushNamed(SignUpScreen.routeName);
+                                  validator: (value) {
+                                    if (value!.isEmpty) {
+                                      return "*Required";
+                                    } else {
+                                      return null;
+                                    }
                                   },
-                                  child: const Text(
-                                    "Register",
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontSize: 15,
-                                        fontFamily: 'PoppinsBold'),
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    margin:
+                                        EdgeInsets.only(top: 20, bottom: 24),
+                                    child: Button(
+                                        text: "SIGN IN",
+                                        clickHandler: onSubmittingForm),
                                   ),
-                                )
-                              ],
-                            )
-                          ],
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomText(text: "Don't have an account?"),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      print("send to register activity");
+                                      Navigator.of(context)
+                                          .pushNamed(SignUpScreen.routeName);
+                                    },
+                                    child: const Text(
+                                      "Register",
+                                      style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 15,
+                                          fontFamily: 'PoppinsBold'),
+                                    ),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-          Footer(),
-        ],
+            Footer(),
+          ],
+        ),
       ),
     );
   }
