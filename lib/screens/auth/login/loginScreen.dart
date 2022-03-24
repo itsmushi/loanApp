@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
+import 'package:loanapp/screens/home/homeScreen.dart';
 import 'package:loanapp/shared/sharedComponents/button.dart';
 import 'package:loanapp/shared/sharedComponents/customTextInput.dart';
 import 'package:loanapp/shared/sharedComponents/footer.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 
-import '../home/homeScreen.dart';
 import '../signUp/signUpScreen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -61,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 24),
+              margin: Constants.leftRightMargin,
               height: MediaQuery.of(context).size.height * 0.90,
               child: SingleChildScrollView(
                 child: Column(
@@ -149,10 +149,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                       Navigator.of(context)
                                           .pushNamed(SignUpScreen.routeName);
                                     },
-                                    child: const Text(
+                                    child: Text(
                                       "Register",
                                       style: TextStyle(
-                                          color: Colors.blue,
+                                          color: Constants.defaultColor,
                                           fontSize: 15,
                                           fontFamily: 'PoppinsBold'),
                                     ),

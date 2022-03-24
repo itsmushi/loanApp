@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:loanapp/core/constants.dart';
 
 class CustomText extends StatelessWidget {
   CustomText({required this.text});
@@ -10,7 +11,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(fontSize: 16, color: Colors.black54),
+      style: Constants.customStyle,
     );
   }
 }
