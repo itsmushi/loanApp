@@ -1,12 +1,21 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step3/blueText.dart';
+import 'package:loanapp/screens/applyLoan/steps/components/step3/components/barInfo.dart';
+import 'package:loanapp/screens/applyLoan/steps/components/step3/components/blueText.dart';
 import 'package:loanapp/screens/applyLoan/steps/components/step3/components/customTextBolded.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 
-class Step3 extends StatelessWidget {
+class Step3 extends StatefulWidget {
+  @override
+  State<Step3> createState() => _Step3State();
+}
+
+class _Step3State extends State<Step3> {
   String dropdownvalue = 'Item 1';
+  bool value = false;
+
   selectItemHandler(String val) {
     print("selected item is $val");
   }
@@ -16,6 +25,7 @@ class Step3 extends StatelessWidget {
     'Item 1',
     'Item 2',
   ];
+
   final Divider _divider = Divider(
     color: Constants.textColor,
     height: 20,
@@ -68,6 +78,28 @@ class Step3 extends StatelessWidget {
           CustomTextBolded(text: "257,000.00 TZS")
         ],
       ),
+      _divider,
+      Constants.spaceNextInput,
+      BarInfo("Repayment period in months", "18 Months"),
+      Constants.spaceNextInput,
+      BarInfo("Total amount to be paid each month", "45,000.00 TZS"),
+      Constants.spaceBetween,
+      Row(
+        children: [
+          Checkbox(
+            value: this.value,
+            onChanged: (bool? value) {
+              setState(() {
+                this.value = value!;
+              });
+            },
+          ),
+          Text(
+            "Agree to terms and conditions",
+            style: TextStyle(fontSize: 14, color: Colors.black54),
+          )
+        ],
+      )
     ]);
   }
 }
