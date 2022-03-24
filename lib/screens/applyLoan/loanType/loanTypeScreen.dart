@@ -72,7 +72,10 @@ class _LoanTypeScreenState extends State<LoanTypeScreen> {
                 text: "Check for loan limit",
                 clickHandler: (context) {
                   print("next screen");
-                  Navigator.of(context).pushNamed(MicrofinanceScreen.routeName);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MicrofinanceScreen()));
                 }),
           ],
         ),

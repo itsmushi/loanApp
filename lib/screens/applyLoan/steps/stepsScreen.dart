@@ -31,48 +31,42 @@ class _StepsScreenState extends State<StepsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: Constants.leftRightMargin,
-      child: Column(
-        children: [
-          Expanded(
-            child: Stepper(
-              type: stepperType,
-              physics: ScrollPhysics(),
-              currentStep: _currentStep,
-              onStepTapped: (step) => tapped(step),
-              onStepContinue: continued,
-              onStepCancel: cancel,
-              steps: <Step>[
-                Step(
-                  title: new Text(''),
-                  content: Step1(),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 0
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-                Step(
-                  title: new Text(''),
-                  content: Step2(),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 1
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-                Step(
-                  title: new Text(''),
-                  content: Step3(),
-                  isActive: _currentStep >= 0,
-                  state: _currentStep >= 2
-                      ? StepState.complete
-                      : StepState.disabled,
-                ),
-              ],
-            ),
+    return Column(
+      children: [
+        Expanded(
+          child: Stepper(
+            type: stepperType,
+            physics: ScrollPhysics(),
+            currentStep: _currentStep,
+            onStepTapped: (step) => tapped(step),
+            onStepContinue: continued,
+            onStepCancel: cancel,
+            steps: <Step>[
+              Step(
+                title: new Text(''),
+                content: Step1(),
+                isActive: _currentStep >= 0,
+                state:
+                    _currentStep >= 0 ? StepState.complete : StepState.disabled,
+              ),
+              Step(
+                title: new Text(''),
+                content: Step2(),
+                isActive: _currentStep >= 0,
+                state:
+                    _currentStep >= 1 ? StepState.complete : StepState.disabled,
+              ),
+              Step(
+                title: new Text(''),
+                content: Step3(),
+                isActive: _currentStep >= 0,
+                state:
+                    _currentStep >= 2 ? StepState.complete : StepState.disabled,
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

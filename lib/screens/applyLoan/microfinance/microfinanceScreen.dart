@@ -41,7 +41,8 @@ class MicrofinanceScreen extends StatelessWidget {
             Button(
                 text: "Continue",
                 clickHandler: (context) {
-                  Navigator.of(context).pushNamed(StepsScreen.routeName);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => StepsScreen()));
                 }),
           ],
         ),

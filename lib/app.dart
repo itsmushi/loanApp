@@ -40,8 +40,6 @@ class _MyAppState extends State<MyApp> {
               //  LoginScreen(),
               // SignUpScreen()
               HomeApplyLoan(),
-
-          // child: ListDadaScreen(),
         ),
         routes: {
           LoginScreen.routeName: (_) => LoginScreen(),
