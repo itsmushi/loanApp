@@ -4,8 +4,8 @@ import 'package:loanapp/core/constants.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 
 import 'components/barInfo.dart';
-import 'components/blueText.dart';
-import 'components/customTextBolded.dart';
+import '../../../../../../shared/sharedComponents/blueText.dart';
+import '../../../../../../shared/sharedComponents/customTextBolded.dart';
 
 class Step3 extends StatefulWidget {
   @override
@@ -94,7 +94,7 @@ class _Step3State extends State<Step3> {
               });
             },
           ),
-          Text(
+          const Text(
             "Agree to terms and conditions",
             style: TextStyle(fontSize: 14, color: Colors.black54),
           )

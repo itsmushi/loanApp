@@ -49,6 +49,7 @@ class _HomeApplyLoanState extends State<HomeApplyLoan> {
                         tabItem: "LoanType"),
                   ),
                   Offstage(
+                    offstage: false,
                     child: TabNavigator(
                         navigatorKey: _navigatorKeys.values.last,
                         tabItem: "LoanCalculator"),

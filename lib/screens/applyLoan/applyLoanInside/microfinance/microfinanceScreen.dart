@@ -30,13 +30,13 @@ class MicrofinanceScreen extends StatelessWidget {
       margin: Constants.leftRightMargin,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         CustomText(text: "Select Loan Type"),
-        SizedBox(height: 8),
+        Constants.spaceBetween,
         CustomDropDown(items, selectItemHandler),
-        SizedBox(height: 14),
+        Constants.spaceNextInput,
         CustomText(text: "Select Microfinance"),
-        SizedBox(height: 8),
+        Constants.spaceBetween,
         CustomDropDown(items, selectItemHandler),
-        SizedBox(height: 16),
+        Constants.spaceNextInput,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
