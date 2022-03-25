@@ -35,6 +35,7 @@ class HomeScreen extends StatelessWidget {
       'Item 5',
     ];
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         actions: [Header()],
       ),
@@ -87,8 +88,7 @@ class HomeScreen extends StatelessWidget {
                   HomeButtonLink(
                     text: "LOAN CALCULATOR",
                     clickHandler: (context) {
-                      Navigator.of(context)
-                          .pushNamed(LoanCalculatorScreen.routeName);
+                      Navigator.of(context).pushNamed(HomeApplyLoan.routeName);
                     },
                     filled: true,
                   ),

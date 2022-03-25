@@ -39,9 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
     } else {
       print("Not Validated");
-
-      Navigator.of(context).pushReplacementNamed(
-          HomeScreen.routeName); //remove this later  its just for dev
+//remove this later  its just for dev
     }
   }
 
@@ -147,7 +145,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     onTap: () {
                                       print("send to register activity");
                                       Navigator.of(context)
-                                          .pushNamed(SignUpScreen.routeName);
+                                          .pushReplacementNamed(
+                                              SignUpScreen.routeName);
                                     },
                                     child: Text(
                                       "Register",
@@ -168,10 +167,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            Footer(),
           ],
         ),
       ),
+      bottomSheet: Footer(),
     );
   }
 }

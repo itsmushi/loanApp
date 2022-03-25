@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
 import 'package:loanapp/shared/sharedComponents/button.dart';
 import 'package:loanapp/shared/sharedComponents/customEmailTextInput.dart';
@@ -55,169 +56,172 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(
         title: const Text("Sign Up"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 24),
-              height: MediaQuery.of(context).size.height * 0.90,
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height / 18,
-                    ),
-                    Form(
-                      key: _formkey,
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              CustomText(text: "First Name"),
-                            ],
-                          ),
-                          Padding(
-                              padding: _edgeInsets,
-                              child: CustomTextInput(fnController)),
-                          Row(
-                            children: [
-                              CustomText(text: "Last Name"),
-                            ],
-                          ),
-                          Padding(
-                              padding: _edgeInsets,
-                              child: CustomTextInput(lnController)),
-                          Row(
-                            children: [
-                              CustomText(text: "Email"),
-                            ],
-                          ),
-                          Padding(
-                              padding: _edgeInsets,
-                              child: CustomEmailTextInput(emailController)),
-                          Row(
-                            children: [
-                              CustomText(text: "Phone Numer"),
-                            ],
-                          ),
-                          Padding(
-                              padding: _edgeInsets,
-                              child: CustomNumberInput(pnController)),
-                          Row(
-                            children: [
-                              CustomText(text: "Password"),
-                            ],
-                          ),
-                          Padding(
-                            padding: _edgeInsets,
-                            child: TextFormField(
-                              controller: passwordController,
-                              obscureText: _isHidden,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 4.0, horizontal: 8),
-                                border: formBorder,
-                                suffix: InkWell(
-                                  onTap: _togglePasswordView,
-                                  child: Icon(
-                                    _isHidden
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                  ),
-                                ),
-                              ),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "*Required";
-                                } else {
-                                  return null;
-                                }
-                              },
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              CustomText(text: "Re-type Password"),
-                            ],
-                          ),
-                          Padding(
-                            padding: _edgeInsets,
-                            child: TextFormField(
-                              controller: repeatPasswordController,
-                              obscureText: _isHidden,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                    vertical: 4.0, horizontal: 8),
-                                border: formBorder,
-                                suffix: InkWell(
-                                  onTap: _togglePasswordView,
-                                  child: Icon(
-                                    _isHidden
-                                        ? Icons.visibility
-                                        : Icons.visibility_off,
-                                  ),
-                                ),
-                              ),
-                              validator: (value) {
-                                if (value!.isEmpty) {
-                                  return "*Required";
-                                }
-                                if (value != passwordController.text) {
-                                  return "password do not match";
-                                } else {
-                                  return null;
-                                }
-                              },
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.only(top: 20, bottom: 24),
-                                child: Button(
-                                    text: "REGISTER",
-                                    clickHandler: onSubmittingForm),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CustomText(text: "Already have an account?"),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  print("send to register activity");
-                                  Navigator.of(context)
-                                      .pushNamed(SignUpScreen.routeName);
-                                },
-                                child: const Text(
-                                  "Login",
-                                  style: TextStyle(
-                                      color: Colors.blue,
-                                      fontSize: 15,
-                                      fontFamily: 'PoppinsBold'),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
+      body: Container(
+        height: MediaQuery.of(context).size.height * 0.83,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 24),
+                height: MediaQuery.of(context).size.height * 0.90,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height / 18,
                       ),
-                    ),
-                  ],
+                      Form(
+                        key: _formkey,
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                CustomText(text: "First Name"),
+                              ],
+                            ),
+                            Padding(
+                                padding: _edgeInsets,
+                                child: CustomTextInput(fnController)),
+                            Row(
+                              children: [
+                                CustomText(text: "Last Name"),
+                              ],
+                            ),
+                            Padding(
+                                padding: _edgeInsets,
+                                child: CustomTextInput(lnController)),
+                            Row(
+                              children: [
+                                CustomText(text: "Email"),
+                              ],
+                            ),
+                            Padding(
+                                padding: _edgeInsets,
+                                child: CustomEmailTextInput(emailController)),
+                            Row(
+                              children: [
+                                CustomText(text: "Phone Numer"),
+                              ],
+                            ),
+                            Padding(
+                                padding: _edgeInsets,
+                                child: CustomNumberInput(pnController)),
+                            Row(
+                              children: [
+                                CustomText(text: "Password"),
+                              ],
+                            ),
+                            Padding(
+                              padding: _edgeInsets,
+                              child: TextFormField(
+                                controller: passwordController,
+                                obscureText: _isHidden,
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 4.0, horizontal: 8),
+                                  border: formBorder,
+                                  suffix: InkWell(
+                                    onTap: _togglePasswordView,
+                                    child: Icon(
+                                      _isHidden
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                    ),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "*Required";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                CustomText(text: "Re-type Password"),
+                              ],
+                            ),
+                            Padding(
+                              padding: _edgeInsets,
+                              child: TextFormField(
+                                controller: repeatPasswordController,
+                                obscureText: _isHidden,
+                                decoration: InputDecoration(
+                                  contentPadding: const EdgeInsets.symmetric(
+                                      vertical: 4.0, horizontal: 8),
+                                  border: formBorder,
+                                  suffix: InkWell(
+                                    onTap: _togglePasswordView,
+                                    child: Icon(
+                                      _isHidden
+                                          ? Icons.visibility
+                                          : Icons.visibility_off,
+                                    ),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value!.isEmpty) {
+                                    return "*Required";
+                                  }
+                                  if (value != passwordController.text) {
+                                    return "password do not match";
+                                  } else {
+                                    return null;
+                                  }
+                                },
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 20, bottom: 24),
+                                  child: Button(
+                                      text: "REGISTER",
+                                      clickHandler: onSubmittingForm),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomText(text: "Already have an account?"),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    print("send to register activity");
+                                    Navigator.of(context).pushReplacementNamed(
+                                        LoginScreen.routeName);
+                                  },
+                                  child: const Text(
+                                    "Login",
+                                    style: TextStyle(
+                                        color: Colors.blue,
+                                        fontSize: 15,
+                                        fontFamily: 'PoppinsBold'),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const Footer(),
-          ],
+            ],
+          ),
         ),
       ),
+      bottomSheet: Footer(),
     );
   }
 }

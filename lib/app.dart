@@ -46,16 +46,15 @@ class _MyAppState extends State<MyApp> {
             primarySwatch: Colors.blue,
           ),
           home: SafeArea(
-              child:
-                  //  LoginScreen(),
-                  HomeScreen()
-              // SignUpScreen()
-              // HomeApplyLoan(),
-              // ProfileScreen()
-              // OutstandingLoanScreen()
-              // LoanStatementScreen()
-              //
-              ),
+            child: LoginScreen(),
+            // HomeScreen()
+            // SignUpScreen()
+            // HomeApplyLoan(),
+            // ProfileScreen()
+            // OutstandingLoanScreen()
+            // LoanStatementScreen()
+            //
+          ),
           routes: {
             LoginScreen.routeName: (_) => LoginScreen(),
             SignUpScreen.routeName: (_) => SignUpScreen(),
