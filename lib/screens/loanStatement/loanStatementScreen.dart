@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/screens/loanStatement/components/deliveryOptions.dart';
+import 'package:loanapp/screens/loanStatement/requestStatement/requestStatementScreen.dart';
 
 import '../../core/constants.dart';
 import '../../shared/sharedComponents/button.dart';
@@ -52,7 +53,7 @@ class _LoanStatementScreenState extends State<LoanStatementScreen> {
               height: 16,
             ),
 
-            DeliveryOptions(),
+            const DeliveryOptions(),
             Constants.spaceNextInput,
             Constants.spaceNextInput,
 
@@ -62,7 +63,8 @@ class _LoanStatementScreenState extends State<LoanStatementScreen> {
                 Button(
                     text: "Request Statement",
                     clickHandler: (context) {
-                      Navigator.of(context).pop();
+                      Navigator.of(context)
+                          .pushNamed(RequestStatementScreen.routeName);
                     }),
               ],
             ),

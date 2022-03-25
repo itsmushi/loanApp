@@ -29,6 +29,8 @@ class MicrofinanceScreen extends StatelessWidget {
     return Container(
       margin: Constants.leftRightMargin,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Constants.spaceNextInput,
+        Constants.spaceNextInput,
         CustomText(text: "Select Loan Type"),
         Constants.spaceBetween,
         CustomDropDown(items, selectItemHandler),

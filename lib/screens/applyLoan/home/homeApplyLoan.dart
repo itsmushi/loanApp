@@ -12,19 +12,37 @@ class HomeApplyLoan extends StatefulWidget {
   State<HomeApplyLoan> createState() => _HomeApplyLoanState();
 }
 
-class _HomeApplyLoanState extends State<HomeApplyLoan> {
+class _HomeApplyLoanState extends State<HomeApplyLoan>
+    with SingleTickerProviderStateMixin {
   final Map<String, GlobalKey<NavigatorState>> _navigatorKeys = {
     "LoanType": GlobalKey<NavigatorState>(),
     "LoanCalculator": GlobalKey<NavigatorState>()
   };
+
+  TabController? _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = new TabController(vsync: this, length: 2);
+  }
+
+  @override
+  void dispose() {
+    _tabController!.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 2,
         child: WillPopScope(
           onWillPop: () async {
-            final isFirstRouteInCurrentTab =
-                !await _navigatorKeys.values.last.currentState!.maybePop();
+            final isFirstRouteInCurrentTab = !await _navigatorKeys.values
+                .elementAt(_tabController!.index)
+                .currentState!
+                .maybePop();
 
             return isFirstRouteInCurrentTab; //if this is false route will not be pooped
           },
@@ -42,6 +60,7 @@ class _HomeApplyLoanState extends State<HomeApplyLoan> {
             body: Container(
               height: MediaQuery.of(context).size.height * 0.8,
               child: TabBarView(
+                controller: _tabController,
                 children: [
                   Offstage(
                     offstage: false,

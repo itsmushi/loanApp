@@ -3,6 +3,7 @@ import 'package:loanapp/screens/applyLoan/applyLoanInside/loanType/loanTypeScree
 import 'package:loanapp/screens/applyLoan/applyLoanInside/password/passwordScreen.dart';
 import 'package:loanapp/screens/applyLoan/applyLoanInside/steps/stepsScreen.dart';
 import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
+import 'package:loanapp/screens/applyLoan/requestSent/requestSentScreen.dart';
 
 class TabNavigator extends StatelessWidget {
 //  TabNavigator(
@@ -25,8 +26,8 @@ class TabNavigator extends StatelessWidget {
     switch (tabItem) {
       case "LoanType":
         {
-          // child = LoanTypeScreen();
-          child = PasswordScreen();
+          child = LoanTypeScreen();
+          // child = RequestSentScreen();
           break;
         }
 

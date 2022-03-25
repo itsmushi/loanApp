@@ -11,6 +11,7 @@ import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
 import 'package:loanapp/screens/loanStatement/loanStatementScreen.dart';
+import 'package:loanapp/screens/loanStatement/requestStatement/requestStatementScreen.dart';
 import 'package:loanapp/screens/outstandingLoan/outstandingLoan.dart';
 import 'package:loanapp/screens/profile/changePasswordScreen/changePasswordScreen.dart';
 import 'package:loanapp/screens/profile/profileScreen/profileScreen.dart';
@@ -71,7 +72,8 @@ class _MyAppState extends State<MyApp> {
             LoanStatementScreen.routeName: (_) => LoanStatementScreen(),
             TermConditionsScreen.routeName: (_) => TermConditionsScreen(),
             PasswordScreen.routeName: (_) => PasswordScreen(),
-            RequestSentScreen.routeName: (_) => RequestSentScreen()
+            RequestSentScreen.routeName: (_) => RequestSentScreen(),
+            RequestStatementScreen.routeName: (_) => RequestStatementScreen()
           },
         ));
   }

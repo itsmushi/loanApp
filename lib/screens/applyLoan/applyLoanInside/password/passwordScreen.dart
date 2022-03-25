@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:loanapp/screens/applyLoan/requestSent/requestSentScreen.dart';
 
 import '../../../../core/constants.dart';
 import '../../../../shared/sharedComponents/button.dart';
@@ -23,7 +24,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
       print("Validated");
 
       print(passwordController.text);
-      // Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+      Navigator.of(context).pushReplacementNamed(RequestSentScreen.routeName);
     } else {
       print("Not Validated");
     }

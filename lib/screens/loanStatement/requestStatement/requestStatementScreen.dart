@@ -5,10 +5,10 @@ import 'package:loanapp/screens/home/homeScreen.dart';
 import '../../../core/constants.dart';
 import '../../../shared/sharedComponents/button.dart';
 
-class RequestSentScreen extends StatelessWidget {
-  const RequestSentScreen({Key? key}) : super(key: key);
+class RequestStatementScreen extends StatelessWidget {
+  const RequestStatementScreen({Key? key}) : super(key: key);
 
-  static String routeName = 'RequestSentScreen';
+  static String routeName = 'RequestStatementScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class RequestSentScreen extends StatelessWidget {
                   ),
                   Container(
                     child: AutoSizeText(
-                      "You have successfully applied for loan of Tsh 200,000.00.You will receive email/SMS confirmation soon",
+                      "You have successfully requested statement of Boda Boda Loan. You will receive email/SMS statement soon",
                       style: Constants.customStyle,
                       minFontSize: 18,
                       maxLines: 4,
@@ -55,7 +55,7 @@ class RequestSentScreen extends StatelessWidget {
                     child: Button(
                         text: "Return Home",
                         clickHandler: (context) {
-                          Navigator.of(context, rootNavigator: true)
+                          Navigator.of(context)
                               .pushReplacementNamed(HomeScreen.routeName);
                         }),
                   ),
