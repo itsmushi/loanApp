@@ -7,9 +7,12 @@ import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
 import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
+import 'package:loanapp/screens/loanStatement/loanStatementScreen.dart';
+import 'package:loanapp/screens/outstandingLoan/outstandingLoan.dart';
 import 'package:loanapp/screens/profile/changePasswordScreen/changePasswordScreen.dart';
 import 'package:loanapp/screens/profile/profileScreen/profileScreen.dart';
 import 'package:loanapp/screens/splashScreen.dart';
+import 'package:loanapp/screens/termConditions/termConditions.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/applyLoan/applyLoanInside/microfinance/microfinanceScreen.dart';
@@ -41,7 +44,11 @@ class _MyAppState extends State<MyApp> {
                 //  LoginScreen(),
                 // SignUpScreen()
                 // HomeApplyLoan(),
-                ProfileScreen()),
+                // ProfileScreen()
+                // OutstandingLoanScreen()
+                LoanStatementScreen()
+            //
+            ),
         routes: {
           LoginScreen.routeName: (_) => LoginScreen(),
           SignUpScreen.routeName: (_) => SignUpScreen(),
@@ -49,7 +56,10 @@ class _MyAppState extends State<MyApp> {
           HomeScreen.routeName: (_) => HomeScreen(),
           StepsScreen.routeName: (_) => StepsScreen(),
           ProfileScreen.routeName: (_) => ProfileScreen(),
-          ChangePasswordScreen.routeName: (_) => ChangePasswordScreen()
+          ChangePasswordScreen.routeName: (_) => ChangePasswordScreen(),
+          OutstandingLoanScreen.routeName: (_) => OutstandingLoanScreen(),
+          LoanStatementScreen.routeName: (_) => LoanStatementScreen(),
+          TermConditionsScreen.routeName: (_) => TermConditionsScreen()
         },
       ),
     );
