@@ -26,9 +26,9 @@ class _StepsScreenState extends State<StepsScreen> {
   continued() {
     _currentStep < 2
         ? setState(() => _currentStep += 1)
-        : _currentStep == 3
-            ? Navigator.push(context,
-                MaterialPageRoute(builder: (context) => PasswordScreen()))
+        : _currentStep == 2
+            ? Navigator.of(context, rootNavigator: true)
+                .pushNamed(PasswordScreen.routeName)
             : null;
   }
 

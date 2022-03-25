@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:loanapp/core/constants.dart';
 import 'package:loanapp/screens/applyLoan/home/components/tabNavigator.dart';
 import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
 
 import 'package:loanapp/shared/sharedComponents/footer.dart';
+import 'package:loanapp/shared/sharedComponents/text.dart';
 
 class HomeApplyLoan extends StatefulWidget {
   const HomeApplyLoan({Key? key}) : super(key: key);
@@ -49,8 +51,11 @@ class _HomeApplyLoanState extends State<HomeApplyLoan>
           child: Scaffold(
             appBar: AppBar(
               title: const Text("Apply Loan"),
-              // ignore: prefer_const_constructors
               bottom: TabBar(
+                controller: _tabController,
+                indicator: BoxDecoration(color: Colors.white),
+                unselectedLabelColor: Colors.white,
+                labelColor: Constants.textColor,
                 tabs: const [
                   Tab(text: "Apply For Loan"),
                   Tab(text: "Loan Calculator")
