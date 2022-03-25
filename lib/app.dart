@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:loanapp/appStates/sampleState.dart';
 import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
-import 'package:loanapp/screens/applyLoan/loanType/loanTypeScreen.dart';
-import 'package:loanapp/screens/applyLoan/microfinance/microfinanceScreen.dart';
-import 'package:loanapp/screens/applyLoan/steps/stepsScreen.dart';
 import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
-
 import 'package:loanapp/screens/splashScreen.dart';
 import 'package:provider/provider.dart';
+
+import 'screens/applyLoan/applyLoanInside/microfinance/microfinanceScreen.dart';
+import 'screens/applyLoan/applyLoanInside/steps/stepsScreen.dart';
 
 class MyApp extends StatefulWidget {
   static String appName = "loanApp";

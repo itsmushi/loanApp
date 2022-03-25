@@ -1,11 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step3/components/barInfo.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step3/components/blueText.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step3/components/customTextBolded.dart';
-import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
+
+import 'components/barInfo.dart';
+import 'components/blueText.dart';
+import 'components/customTextBolded.dart';
 
 class Step3 extends StatefulWidget {
   @override

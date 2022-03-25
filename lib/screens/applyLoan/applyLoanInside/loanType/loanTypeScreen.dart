@@ -1,10 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/microfinance/microfinanceScreen.dart';
+
 import 'package:loanapp/shared/sharedComponents/button.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
+
+import '../microfinance/microfinanceScreen.dart';
 
 class LoanTypeScreen extends StatefulWidget {
   @override

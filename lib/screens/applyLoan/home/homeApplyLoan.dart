@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/screens/applyLoan/home/components/tabNavigator.dart';
 import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
-import 'package:loanapp/screens/applyLoan/loanType/loanTypeScreen.dart';
+
 import 'package:loanapp/shared/sharedComponents/footer.dart';
 
 class HomeApplyLoan extends StatefulWidget {
@@ -23,7 +23,7 @@ class _HomeApplyLoanState extends State<HomeApplyLoan> {
         child: WillPopScope(
           onWillPop: () async {
             final isFirstRouteInCurrentTab =
-                !await _navigatorKeys.values.first.currentState!.maybePop();
+                !await _navigatorKeys.values.last.currentState!.maybePop();
 
             return isFirstRouteInCurrentTab; //if this is false route will not be pooped
           },

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step2/components/uploadButton.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step2/components/uploadLetter.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import 'package:loanapp/shared/sharedComponents/customEmailTextInput.dart';
 import 'package:loanapp/shared/sharedComponents/customTextInput.dart';
@@ -11,6 +9,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:flutter/services.dart';
+
+import 'components/uploadLetter.dart';
 
 class Step2 extends StatefulWidget {
   @override

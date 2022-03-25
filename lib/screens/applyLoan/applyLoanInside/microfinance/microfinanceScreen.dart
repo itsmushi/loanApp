@@ -1,10 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/steps/stepsScreen.dart';
+
 import 'package:loanapp/shared/sharedComponents/button.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
+
+import '../steps/stepsScreen.dart';
 
 class MicrofinanceScreen extends StatelessWidget {
   static String routeName = 'MicrofinanceScreen';

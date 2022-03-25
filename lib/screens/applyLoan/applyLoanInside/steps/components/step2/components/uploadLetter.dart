@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step2/components/uploadButton.dart';
+import 'package:loanapp/screens/applyLoan/applyLoanInside/steps/components/step2/components/uploadButton.dart';
 import 'package:loanapp/shared/sharedComponents/text.dart';
 
 class UploadLetter extends StatelessWidget {

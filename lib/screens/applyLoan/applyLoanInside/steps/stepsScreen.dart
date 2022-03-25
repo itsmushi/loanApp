@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step1/step1.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step2/step2.dart';
-import 'package:loanapp/screens/applyLoan/steps/components/step3/step3.dart';
+
+import 'components/step1/step1.dart';
+import 'components/step2/step2.dart';
+import 'components/step3/step3.dart';
 
 class StepsScreen extends StatefulWidget {
   const StepsScreen({Key? key}) : super(key: key);
