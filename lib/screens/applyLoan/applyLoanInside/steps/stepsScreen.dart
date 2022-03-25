@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
+import 'package:loanapp/screens/applyLoan/applyLoanInside/password/passwordScreen.dart';
 
 import 'components/step1/step1.dart';
 import 'components/step2/step2.dart';
@@ -23,7 +24,12 @@ class _StepsScreenState extends State<StepsScreen> {
   }
 
   continued() {
-    _currentStep < 2 ? setState(() => _currentStep += 1) : null;
+    _currentStep < 2
+        ? setState(() => _currentStep += 1)
+        : _currentStep == 3
+            ? Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PasswordScreen()))
+            : null;
   }
 
   cancel() {

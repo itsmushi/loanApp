@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:loanapp/appStates/sampleState.dart';
+import 'package:loanapp/screens/applyLoan/applyLoanInside/password/passwordScreen.dart';
 
 import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
 import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
+import 'package:loanapp/screens/applyLoan/requestSent/requestSentScreen.dart';
 
 import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
@@ -67,7 +69,9 @@ class _MyAppState extends State<MyApp> {
             ChangePasswordScreen.routeName: (_) => ChangePasswordScreen(),
             OutstandingLoanScreen.routeName: (_) => OutstandingLoanScreen(),
             LoanStatementScreen.routeName: (_) => LoanStatementScreen(),
-            TermConditionsScreen.routeName: (_) => TermConditionsScreen()
+            TermConditionsScreen.routeName: (_) => TermConditionsScreen(),
+            PasswordScreen.routeName: (_) => PasswordScreen(),
+            RequestSentScreen.routeName: (_) => RequestSentScreen()
           },
         ));
   }
