@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:loanapp/core/constants.dart';
+import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
+import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
 import 'package:loanapp/screens/home/components/home_button_links.dart';
+import 'package:loanapp/screens/loanStatement/loanStatementScreen.dart';
+import 'package:loanapp/screens/outstandingLoan/outstandingLoan.dart';
 import 'package:loanapp/shared/sharedComponents/customDropdown.dart';
 import '../../shared/sharedComponents/text.dart';
 import './components/home_drawer.dart';
@@ -55,11 +59,17 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   HomeButtonLink(
                     text: "APPLY FOR LOAN",
-                    clickHandler: (context) {},
+                    clickHandler: (context) {
+                      Navigator.of(context).pushNamed(HomeApplyLoan.routeName);
+                    },
                     filled: true,
                   ),
                   HomeButtonLink(
-                      text: "OUTSTANDING LOANS", clickHandler: (context) {})
+                      text: "OUTSTANDING LOANS",
+                      clickHandler: (context) {
+                        Navigator.of(context)
+                            .pushNamed(OutstandingLoanScreen.routeName);
+                      })
                 ],
               ),
             ),
@@ -69,10 +79,17 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   HomeButtonLink(
-                      text: "LOAN STATEMENT", clickHandler: (context) {}),
+                      text: "LOAN STATEMENT",
+                      clickHandler: (context) {
+                        Navigator.of(context)
+                            .pushNamed(LoanStatementScreen.routeName);
+                      }),
                   HomeButtonLink(
                     text: "LOAN CALCULATOR",
-                    clickHandler: (context) {},
+                    clickHandler: (context) {
+                      Navigator.of(context)
+                          .pushNamed(LoanCalculatorScreen.routeName);
+                    },
                     filled: true,
                   ),
                 ],

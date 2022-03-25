@@ -6,6 +6,7 @@ import 'package:loanapp/shared/sharedComponents/footer.dart';
 
 class HomeApplyLoan extends StatefulWidget {
   const HomeApplyLoan({Key? key}) : super(key: key);
+  static String routeName = 'HomeApplyLoan';
 
   @override
   State<HomeApplyLoan> createState() => _HomeApplyLoanState();

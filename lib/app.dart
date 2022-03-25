@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:loanapp/appStates/sampleState.dart';
 
 import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
+import 'package:loanapp/screens/applyLoan/loanCalculator/loanCalculatorScreen.dart';
 
 import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
@@ -58,9 +59,11 @@ class _MyAppState extends State<MyApp> {
           routes: {
             LoginScreen.routeName: (_) => LoginScreen(),
             SignUpScreen.routeName: (_) => SignUpScreen(),
-            MicrofinanceScreen.routeName: (_) => MicrofinanceScreen(),
             HomeScreen.routeName: (_) => HomeScreen(),
+            HomeApplyLoan.routeName: (_) => HomeApplyLoan(),
+            MicrofinanceScreen.routeName: (_) => MicrofinanceScreen(),
             StepsScreen.routeName: (_) => StepsScreen(),
+            LoanCalculatorScreen.routeName: (_) => LoanCalculatorScreen(),
             ProfileScreen.routeName: (_) => ProfileScreen(),
             ChangePasswordScreen.routeName: (_) => ChangePasswordScreen(),
             OutstandingLoanScreen.routeName: (_) => OutstandingLoanScreen(),

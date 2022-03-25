@@ -11,6 +11,7 @@ import '../applyLoanInside/steps/stepsScreen.dart';
 
 class LoanCalculatorScreen extends StatelessWidget {
   LoanCalculatorScreen({Key? key}) : super(key: key);
+  static String routeName = "LoanCalculatorScreen";
 
   TextEditingController amountController = TextEditingController();
   TextEditingController monthPeriodController = TextEditingController();
