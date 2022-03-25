@@ -7,6 +7,8 @@ import 'package:loanapp/screens/applyLoan/home/homeApplyLoan.dart';
 import 'package:loanapp/screens/auth/login/loginScreen.dart';
 import 'package:loanapp/screens/auth/signUp/signUpScreen.dart';
 import 'package:loanapp/screens/home/homeScreen.dart';
+import 'package:loanapp/screens/profile/changePasswordScreen/changePasswordScreen.dart';
+import 'package:loanapp/screens/profile/profileScreen/profileScreen.dart';
 import 'package:loanapp/screens/splashScreen.dart';
 import 'package:provider/provider.dart';
 
@@ -35,17 +37,19 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: Colors.blue,
         ),
         home: SafeArea(
-          child:
-              //  LoginScreen(),
-              // SignUpScreen()
-              HomeApplyLoan(),
-        ),
+            child:
+                //  LoginScreen(),
+                // SignUpScreen()
+                // HomeApplyLoan(),
+                ProfileScreen()),
         routes: {
           LoginScreen.routeName: (_) => LoginScreen(),
           SignUpScreen.routeName: (_) => SignUpScreen(),
           MicrofinanceScreen.routeName: (_) => MicrofinanceScreen(),
           HomeScreen.routeName: (_) => HomeScreen(),
-          StepsScreen.routeName: (_) => StepsScreen()
+          StepsScreen.routeName: (_) => StepsScreen(),
+          ProfileScreen.routeName: (_) => ProfileScreen(),
+          ChangePasswordScreen.routeName: (_) => ChangePasswordScreen()
         },
       ),
     );
